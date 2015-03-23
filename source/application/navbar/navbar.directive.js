@@ -3,7 +3,6 @@ angular.module('DopomogaApp.navbar', [])
 		return {
 			restrict: 'A',
 			controller: NavbarCtrl,
-			template: '{{brand}}',
 			link: function (scope, iElement, iAttrs) {
 				
 			}

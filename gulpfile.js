@@ -29,6 +29,10 @@ gulp.task('watch', function() {
     gulp.watch('source/application/**/*.js', ['app']);
 });
 
+gulp.task('build', function(){
+    gulp.start('styles','app');
+})
+
 gulp.task('default', function(){
 
 	gulp.start('watch');

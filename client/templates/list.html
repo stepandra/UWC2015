@@ -1,0 +1,13 @@
+<div class='container'>
+	<div ng-repeat='a in articles | filter: search as result' class="post">
+		<a ng-href="/details/{{a.id}}">
+			<h1>{{a.title}}</h1>			
+		</a>
+		
+		<p>{{a.about}}</p>
+	</div>
+
+	<div ng-if='loading' class='loading-icon'>
+		<i class="fa fa-refresh fa-spin"></i>
+	</div>
+</div>
