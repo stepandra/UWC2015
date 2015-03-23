@@ -2,3 +2,4 @@
 node_modules
 client/styles
 client/components
+client/assets/js/application.js

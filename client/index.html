@@ -46,7 +46,8 @@
 	<link rel="stylesheet" href="assets/css/reset.css" />
 	<link rel="stylesheet" href="assets/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
-	
+	<link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.css">
+
 	<!-- Lea Verou's Prefix Free, lets you use un-prefixed properties in your CSS files -->
 	<script src="assets/js/libs/prefixfree.min.js"></script>
 	
@@ -87,32 +88,20 @@
 
 <div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
 
-	<header ng-controller="NavCtrl">
-		
-		<h1><a href="/">{{debug}}</a></h1>
-		
-		<nav>
-		
-			<ol>
-				<li><a href="">Nav Link 1</a></li>
-				<li><a href="">Nav Link 2</a></li>
-				<li><a href="">Nav Link 3</a></li>
-			</ol>
-		
-		</nav>
+	<header navbar ></header>
 	
-	</header>
-	
-	<article>
+	<article programlist>
+
+	<div ng-repeat='a in articles | filter: search as result' class="post">
+		<h1>{{a.title}}</h1>
 		
-		<h1>Article Header</h1>
-		
-		<p>Etiam pretium odio eu mi convallis vitae varius neque pharetra. Nulla vestibulum nisi ut sem cursus sed mattis nisi egestas.</p>
-		
-		<h2>Article Subhead</h2>
-		
-		<p>Vestibulum lacus erat, volutpat vel dignissim at, fringilla ut felis.</p>
-	
+		<p>{{a.about}}</p>
+	</div>
+
+	<div ng-if='loading' class='loading-icon'>
+		<i class="fa fa-refresh fa-spin"></i>
+	</div>
+
 	</article>
 	
 	<aside>
@@ -130,7 +119,7 @@
 </div>
 
 <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
 <script>window.jQuery || document.write("<script src='assets/js/libs/jquery-1.11.0.min.js'>\x3C/script>")</script>
 
 <!-- this is where we put our custom functions -->
