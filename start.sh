@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 cd client/
-python -m http.server 3000
+python -m SimpleHTTPServer 3000
