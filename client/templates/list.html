@@ -1,12 +1,16 @@
-<div class='container list'>
+<div class=' list'>
 	<div ng-repeat='a in articles | filter: search as result' class="post">
-		<h1 article>
-			<a ng-href="/details/{{a.id}}" >
-				{{a.title}}			
-			</a>
-		</h1>
-
-		<p>{{a.about}}</p>
+		<div class='left'>
+			<h1 article>
+				<a ng-href="/details/{{a.id}}" >
+					{{a.title}}			
+				</a>
+			</h1>
+			<p>{{a.about}}</p>			
+		</div>
+		<div class='right'>
+			<img src="http://placehold.it/350x350">
+		</div>
 	</div>
 
 	<div ng-if='loading' class='loading-icon'>

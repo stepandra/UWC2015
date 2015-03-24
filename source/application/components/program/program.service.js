@@ -11,7 +11,7 @@ angular.module('DopomogaApp')
 					id: '{numberLength|8}',
 					title: '{business}',
 					about: '{lorem|30}',
-					// delay: '1',
+					// delay: '2',
 					rows: '8'
 				},
 				method: 'GET'
@@ -36,7 +36,7 @@ angular.module('DopomogaApp')
 					id: '{numberLength|8}',
 					title: '{business}',
 					about: '{lorem|230}',
-					// delay: '1',
+					// delay: '2',
 					rows: '1',
 					address :'{addressObject}',
 					company :'{business}',

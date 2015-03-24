@@ -1,9 +1,35 @@
 .list{
 	min-height: 5vw;
-}
+	.post{
+		width: 100vw;
+		height: 15vw;
+		min-height: 140px;
+		position: relative;
+		background-color: #eee;
+		display: inline-block;
+		.left, .right{
+			display: inline-block;
+		}	
+		.left{
+			padding: 10px;
+			width: 85vw;
 
-.post{
-	
+			float: left;
+		}
+		.right{
+			// min-width: 140px;
+			width: 15vw;
+
+			float: right;
+			height: 100%;
+			img{
+				min-height: 140px;
+				min-width: 140px;
+				float: right;
+				height: inherit;
+			}
+		}
+	}
 }
 
 .loading-icon{
