@@ -1,6 +1,4 @@
- var DetailsCtrl = ['$scope', '$routeParams',
-		function ($scope, $routeParams) {
-			var id = $routeParams.id;
-			
-			$scope.id = id;
-	}];
+ var DetailsCtrl = ['$scope','details',
+ 		function ($scope,details) {
+ 			$scope.details = details.data;
+ 	}];

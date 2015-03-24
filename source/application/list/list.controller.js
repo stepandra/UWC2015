@@ -2,9 +2,10 @@ angular.module('DopomogaApp')
 .controller('ListCtrl', ['$scope','ProgramService',
 	function ($scope,ProgramService) {
 		$scope.loading = true;
-		ProgramService.query(function(data){
+		var list = ProgramService.getlist();
+		list.then(function(res){
 			$scope.loading = false;
-			$scope.articles = data;
-		});	
+			$scope.articles = res.data;
+		})	
 	}
 ])

@@ -1,10 +1,10 @@
 angular.module('DopomogaApp.navbar', [])
-	.directive('navbar', [function () {
+	.directive('nav', [function () {
 		return {
-			restrict: 'A',
+			restrict: 'E',
 			controller: NavbarCtrl,
 			link: function (scope, iElement, iAttrs) {
-				
+				console.log('navbar init');
 			}
 		};
 	}])

@@ -1,5 +1,5 @@
-var NavbarCtrl = ['$scope', function ($scope) {
-	$scope.isActive = function(link){
-		return false;
+var NavbarCtrl = ['$scope','$location', function ($scope,$location) {
+	$scope.path = function(link){
+		return $location.path() == link;
 	}
 }];

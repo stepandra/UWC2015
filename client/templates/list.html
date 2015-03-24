@@ -1,9 +1,11 @@
-<div class='container'>
+<div class='container list'>
 	<div ng-repeat='a in articles | filter: search as result' class="post">
-		<a ng-href="/details/{{a.id}}">
-			<h1>{{a.title}}</h1>			
-		</a>
-		
+		<h1 article>
+			<a ng-href="/details/{{a.id}}" >
+				{{a.title}}			
+			</a>
+		</h1>
+
 		<p>{{a.about}}</p>
 	</div>
 
