@@ -1,22 +1,36 @@
+// BOOTSTRAP CORE
+
+// Core variables and mixins
+@import "../../client/components/bootstrap/less/variables.less";
+@import "../../client/components/bootstrap/less/mixins.less";
+
+// Reset and dependencies
+@import "../../client/components/bootstrap/less/normalize.less";
+@import "../../client/components/bootstrap/less/print.less";
+@import "../../client/components/bootstrap/less/glyphicons.less";
+
+// Core CSS
+@import "../../client/components/bootstrap/less/scaffolding.less";
+@import "../../client/components/bootstrap/less/type.less";
+@import "../../client/components/bootstrap/less/code.less";
+@import "../../client/components/bootstrap/less/grid.less";
+@import "../../client/components/bootstrap/less/tables.less";
+@import "../../client/components/bootstrap/less/forms.less";
+@import "../../client/components/bootstrap/less/buttons.less";
+
+// Utility classes
+@import "../../client/components/bootstrap/less/utilities.less";
+@import "../../client/components/bootstrap/less/responsive-utilities.less";
+
+// PROJECT CORE
+
+// project varibables
 @import 'var.less';
+// mixins
+@import 'components/mixins.less';
+// small components like buttons etc
+@import 'theme.less';
+
+// Components
 @import 'components/navbar.less';
-@import 'components/list.less';
-@import 'components/details.less';
-@import 'components/footer.less';
 
-@bgcolor: @light-blue;
-@text-color: @dark-blue;
-
-body{
-	height: 100%;
-	background-color: #333348 !important;
-}
-
-.wrapper{
-	height: auto;
-	transition: height 0.5s;
-	background-color: #fff !important;
-	min-height: 100%;
-	height: auto !important; 
-	height: 100%;
-}

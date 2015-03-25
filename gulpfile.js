@@ -5,8 +5,18 @@ var refresh = require('gulp-livereload');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 
-gulp.task('styles', function () {
-    return gulp.src('source/styles/style.less')
+gulp.task('index', function () {
+    return gulp.src('source/styles/index.less')
+        .pipe(less()).on("error", notify.onError("Error: <%= error.message %>"))
+        .pipe(autoprefixer())
+        .pipe(gulp.dest('client/styles'))
+        .pipe(refresh())
+        .pipe(notify({ message:  'Styles task complete' }));
+});
+
+
+gulp.task('dashboard', function () {
+    return gulp.src('source/styles/dashboard.less')
         .pipe(less()).on("error", notify.onError("Error: <%= error.message %>"))
         .pipe(autoprefixer())
         .pipe(gulp.dest('client/styles'))
@@ -25,13 +35,13 @@ gulp.task('app', function(){
 gulp.task('watch', function() {
 	refresh.listen();
 
-    gulp.watch('source/styles/**/*.less', ['styles']);
+    gulp.watch('source/styles/**/*.less', ['index', 'dashboard']);
     gulp.watch('source/application/**/*.js', ['app']);
 });
 
 gulp.task('build', function(){
-    gulp.start('styles','app');
-})
+    gulp.start('index','dashboard','app');
+});
 
 gulp.task('default', function(){
 
