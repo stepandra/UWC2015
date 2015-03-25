@@ -3,7 +3,8 @@ from wtforms import StringField, PasswordField, TextAreaField
 from wtforms.validators import (DataRequired, Regexp, ValidationError, Email,
                                Length, EqualTo)
 
-from models import User
+from ..models import User
+
 
 
 def name_exists(form, field):
@@ -53,5 +54,5 @@ class LoginForm(Form):
     password = PasswordField('Password', validators=[DataRequired()])
     
     
-class PostForm(Form):
+class DashboardForm(Form):
     content = TextAreaField("What's up?", validators=[DataRequired()])

@@ -1,20 +1,15 @@
-from flask import (Flask, g, render_template, flash, redirect, url_for,
-                  abort)
+from flask import (g, render_template, flash, redirect, url_for,
+                   abort)
 from flask.ext.bcrypt import check_password_hash
 from flask.ext.login import (LoginManager, login_user, logout_user,
                              login_required, current_user)
 
-from api import api_program
+from server import app
+
+from server.api.api import api_program
+from server.components import forms
 import models
-import forms
 
-
-DEBUG = True
-PORT = 8000
-HOST = '0.0.0.0'
-
-app = Flask(__name__)
-app.secret_key = 'auoesh.bouoastuh.43,uoausoehuosth3ououea.auoub!'
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -22,10 +17,11 @@ login_manager.login_view = 'login'
 
 app.register_blueprint(api_program)
 
+
 @login_manager.user_loader
-def load_user(userid):
+def load_user(user_id):
     try:
-        return models.User.get(models.User.id == userid)
+        return models.User.get(models.User.id == user_id)
     except models.DoesNotExist:
         return None
 
@@ -59,8 +55,6 @@ def register():
     return render_template('auth/register.html', form=form)
 
 
-
-
 @app.route('/login', methods=('GET', 'POST'))
 def login():
     form = forms.LoginForm()
@@ -87,13 +81,16 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
 
 @app.route('/dashboard')
 def dashboard():
+    form = forms.DashboardForm()
+
     return render_template('dashboard.html')
+
 
 @app.route('/details/<int:post_id>')
 def view_post(post_id):
@@ -102,19 +99,23 @@ def view_post(post_id):
         abort(404)
     return render_template('details.html', stream=posts)
 
+
 @app.errorhandler(404)
 def not_found(error):
     return render_template('404.html'), 404
 
-if __name__ == '__main__':
-    models.initialize()
-    try:
-        models.User.create_user(
-            username='kennethlove',
-            email='kenneth@teamtreehouse.com',
-            password='password',
-            admin=True
-        )
-    except ValueError:
-        pass
-    app.run(debug=DEBUG, host=HOST, port=PORT)
+
+models.initialize()
+try:
+    models.User.create_user(
+        username='kennethlove',
+        email='kenneth@teamtreehouse.com',
+        password='password',
+        admin=True
+    )
+except ValueError:
+    pass
+
+
+
+
