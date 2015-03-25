@@ -1,0 +1,45 @@
+[{
+    "id": "5511bd0dcaffb38c1d3434d2",
+    "index": 0,
+    "guid": "5a66b5d7-ffe6-44cc-b75c-76ae3e8ac534",
+    "isActive": true,
+    "balance": "$2,909.79",
+    "picture": "http://placehold.it/32x32",
+    "age": 22,
+    "eyeColor": "green",
+    "name": "Lorna Bryan",
+    "gender": "female",
+    "company": "ZOID",
+    "email": "lornabryan@zoid.com",
+    "phone": "+1 (821) 525-2284",
+    "address": "599 Desmond Court, Ola, Michigan, 9548",
+    "about": "Sint nostrud quis elit aliqua ipsum sit esse id dolor consequat tempor consequat pariatur. Reprehenderit nostrud occaecat cupidatat cillum Lorem cupidatat aliquip aute. Culpa cillum sunt qui occaecat voluptate aliqua. Laboris exercitation reprehenderit adipisicing ipsum magna enim aliqua sunt nulla labore occaecat est. Sunt veniam fugiat incididunt tempor Lorem mollit duis. Fugiat exercitation reprehenderit sit nulla ullamco excepteur nulla aliqua anim elit velit pariatur qui.\r\n",
+    "registered": "2014-03-24T04:16:41 -02:00",
+    "latitude": -50.50131,
+    "longitude": -2.44539,
+    "tags": [
+      "esse",
+      "exercitation",
+      "in",
+      "tempor",
+      "aliqua",
+      "irure",
+      "elit"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Lawson Gallegos"
+      },
+      {
+        "id": 1,
+        "name": "Jocelyn Joyce"
+      },
+      {
+        "id": 2,
+        "name": "Berg Norton"
+      }
+    ],
+    "greeting": "Hello, Lorna Bryan! You have 9 unread messages.",
+    "favoriteFruit": "banana"
+  }]
