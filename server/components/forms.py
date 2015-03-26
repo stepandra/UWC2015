@@ -1,10 +1,14 @@
 from flask_wtf import Form
-from wtforms import StringField, PasswordField, TextAreaField
+from wtforms import StringField, PasswordField, TextAreaField, IntegerField, BooleanField, DateField, DateTimeField
 from wtforms.validators import (DataRequired, Regexp, ValidationError, Email,
                                Length, EqualTo)
+from wtfpeewee.orm import model_form
 
-from ..models import User
 
+from server.api.user_model import User
+from server.api.program_model import Program, Contacts
+ProgramCreateForm = model_form(Program, Form)
+ContactsCreateForm = model_form(Contacts, Form)
 
 
 def name_exists(form, field):
@@ -29,6 +33,9 @@ class RegisterForm(Form):
             ),
             name_exists
         ])
+    name = StringField('Name', validators=[DataRequired()])
+    phone = StringField('Phone number', validators=[DataRequired()])
+    address = StringField('Address')
     email = StringField(
         'Email',
         validators=[
@@ -47,7 +54,7 @@ class RegisterForm(Form):
         'Confirm Password',
         validators=[DataRequired()]
     )
-    
+
 
 class LoginForm(Form):
     email = StringField('Email', validators=[DataRequired(), Email()])
@@ -56,3 +63,7 @@ class LoginForm(Form):
     
 class DashboardForm(Form):
     content = TextAreaField("What's up?", validators=[DataRequired()])
+
+
+
+
