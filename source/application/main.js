@@ -9,7 +9,7 @@ angular.module('DopomogaApp', [
 .config(['$routeProvider','$locationProvider',function ($routeProvider,$locationProvider) {
 	$routeProvider
 		.otherwise({ 
-			redirectTo: '/' 
+			redirectTo: '/dashboard' 
 		});
 	$locationProvider.html5Mode(true);
 }])

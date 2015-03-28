@@ -1,8 +1,8 @@
 angular.module('DopomogaApp.list', [])
 	.config(['$routeProvider', function ($routeProvider) {
 		$routeProvider
-			.when('/', {
-				templateUrl: '/templates/list.html',
+			.when('/dashboard', {
+				templateUrl: '/static/templates/list.html',
 				controller: 'ListCtrl'
 			})
 	}])

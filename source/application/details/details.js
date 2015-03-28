@@ -1,8 +1,8 @@
 angular.module('DopomogaApp.details', [])
 	.config(['$routeProvider', function ($routeProvider) {
 		$routeProvider
-			.when('/details/:id', {
-				templateUrl: 'templates/details.html',
+			.when('/dashboard/p/:id', {
+				templateUrl: '/static/templates/details.html',
 				controller: DetailsCtrl,
 				resolve: {
 					details : ['ProgramService',function(ProgramService){

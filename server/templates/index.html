@@ -1,10 +1,23 @@
 {% extends "layout.html" %}
 
+{% block head %}
+<link rel="stylesheet" href="static/styles/index.css">
+{% endblock %}
+
 {% block content %}
-<h1>Hi, there!</h1>
+<div class="landpage">
 
-<p>Blabla</p>
+	<div class="container">
+	          <div class="landpage-content">
+	              <h2 class="landpage-title">Допомагай з нами:</h2>
+	              <h4 class="landpage-task">Потребують допомоги <span class="task-count">15551241</span> людей</h4>
+	              <h4 class="landpage-task">Ми допомогли <span class="task-count">15551241</span> людям</h4>
+	          </div>
+	         <!--  <div class="landpage-next">
+							<p><a href="{{ url_for('index') }}">Try again</a></p>
 
-<p><a href="{{ url_for('index') }}">Try again</a></p>
+	          </div> -->
+	</div>
+</div>
 
 {% endblock %}
