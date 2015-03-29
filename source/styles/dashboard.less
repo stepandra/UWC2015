@@ -2,8 +2,20 @@
 @import 'components/list.less';
 @import 'components/details.less';
 
+.navbar {
+  z-index: 100;
+  background: rgba(0,15,25,0.9);
+}
+
 .list{
 	min-width: 800px;
+	h1 a{
+		text-decoration: none;
+		color: #4A6176;
+		&:hover{
+			color: #7A8690;
+		}
+	}
 }
 h1 {
   margin: 0 !important;

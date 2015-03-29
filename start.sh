@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-cd client/
-python -m SimpleHTTPServer 3000
+python runserver.py

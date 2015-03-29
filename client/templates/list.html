@@ -1,12 +1,25 @@
 <div class=' list'>
 	<div ng-repeat='a in articles | filter: search as result' class="post">
 		<div class='left'>
-			<h1 article>
-				<a ng-href="dashboard/p/{{a.id}}" >
-					{{a.title}}			
-				</a>
-			</h1>
-			<p>{{a.about}}</p>			
+			<div class='text'>				
+				<h1 article>
+					<a ng-href="dashboard/p/{{a.id}}" >
+						{{a.title}}			
+					</a>
+				</h1>
+				<p>{{a.about}}</p>			
+			</div>
+			<div class='buttons'>
+				<i class="fa fa-fire"></i>
+				<i class="fa fa-fire"></i>
+			</div>
+			<span class='viewed'>
+			<i class="fa fa-eye"></i>
+			52 
+			</span>
+			<span class='time'>
+					2015-23-21
+			</span>
 		</div>
 		<div class='right'>
 			<img src="http://placehold.it/350x350">

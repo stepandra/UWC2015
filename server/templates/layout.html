@@ -23,12 +23,46 @@
   <script type="text/javascript" src='/static/components/angular-animate/angular-animate.js'></script>
 </head>
 <body>
-
   <div class="navbar navbar-trans">
-    <a class="navbar-link" href="{{ url_for('dashboard') }}">Волонтерськи програми</a>
-    <a class="navbar-link" href="{{ url_for('index') }}">Залучитися</a>
-    <a class="navbar-link pull-right" href="{{ url_for('login') }}">Увійти</a>
+    <ul class='nav-links'>
+      <li class="navbar-link" >
+        <a href="{{ url_for('dashboard') }}">
+          <i class="fa fa-list-alt"></i>
+          Волонтерські програми
+        </a>  
+      </li>
+    
+      {% if current_user.is_authenticated() %}
+      {% else %}
+      <li class="navbar-link">    
+        <a href="{{ url_for('index') }}">
+            <i class="fa fa-users"></i>
+            Залучайся
+        </a>  
+      </li>
+      {% endif %}    
+      {% if current_user.is_authenticated() %}
+        <li class="navbar-link right">
+          <a href="{{ url_for('logout') }}">
+            <i class="fa fa-sign-out"></i>
+            Вихід
+          </a>
+        </li>
+      <span class='username'>
+        <i class="fa fa-user"></i> 
+        {{ current_user.username }}
+      </span>
+      {% else %}
+        <li class="navbar-link right">
+          <a href="{{ url_for('login') }}">
+            <i class="fa fa-sign-in"></i>
+            Увійти
+          </a>
+        </li>
+      {% endif %}
+    </ul>
   </div>
+
 
   {% block content %}{% endblock %}
 

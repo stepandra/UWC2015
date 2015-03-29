@@ -1,14 +1,23 @@
 {% extends "layout.html" %}
 
 {% block head %}
-<link rel="stylesheet" href="static/styles/index.css">
+<link rel="stylesheet" href="/static/styles/index.css">
 {% endblock %}
 
 {% block content %}
+
+<div class='page container error'>
 <h1>404</h1>
 
-<p>Wow, sorry, that page doesn't exist.</p>
+<p class='errmsg'>Wow! Sorry bro, that page doesn't exist. :`(</p>
 
-<p><a href="{{ url_for('index') }}">Try again</a></p>
+<p class='errbtns'>
+	<a href="{{ url_for('index') }}">
+		<i class="fa fa-home"></i>
+		Home
+	</a>
+</p>
+
+</div>
 
 {% endblock %}

@@ -1,32 +1,104 @@
+.lightshadow{
+-webkit-box-shadow: inset 15px 15px 24px -25px rgba(0,0,0,0.75);
+-moz-box-shadow: inset 15px 15px 24px -25px rgba(0,0,0,0.75);
+box-shadow: inset 15px 15px 24px -25px rgba(0,0,0,0.75);
+}
 .list{
 	padding-top: 50px;
 	z-index: -1;
 	min-height: 5vw;
 	.post{
+		&:first-child{
+			-webkit-box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.75);
+			-moz-box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.75);
+			box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.75);
+		}
+		-webkit-box-shadow: inset 0px 20px 25px -28px rgba(0,0,0,0.75);
+		-moz-box-shadow: inset 0px 20px 25px -28px rgba(0,0,0,0.75);
+		box-shadow: inset 0px 20px 25px -28px rgba(0,0,0,0.75);
 		width: 100%;
-		height: 15vw;
-		min-height: 140px;
+		height: 200px;
 		position: relative;
-		background-color: #eee;
-		display: inline-block;
+		border-bottom: 1px #ccc solid;
+		background-color: #fff;
+		// display: inline-block;
 		.left, .right{
 			display: inline-block;
 		}	
 		.left{
-			padding: 10px;
-			width: 85%;
-
+			margin-right: 200px;
+			position: relative;
+			// width: 85%;
+			height: 200px;
 			float: left;
+			padding: 16px 20px 8px 20px;
+			.text{
+				// .lightshadow;
+				// width: 100%;
+				border: 1px #ccc solid;
+				vertical-align: top;
+				padding: 8px 20px 10px 10px;
+				// width: inherit;
+				height: 140px;
+			}
+			.viewed{
+				bottom: 4px;
+				position: absolute;
+				color: #999;
+				font-size: 12px;
+				height: 30px;
+				vertical-align: center;
+				line-height: 30px;
+				right: 90px;
+				text-align: right;
+					
+			}
+			.time{
+				bottom: 4px;
+				position: absolute;
+				color: #999;
+				font-size: 12px;
+				height: 30px;
+				vertical-align: center;
+				line-height: 30px;
+				right: 20px;
+				text-align: right;
+				}
+			.buttons{
+				display: inline-block;
+				position: absolute;
+				bottom: 6px;
+				padding: 0 0px;
+				width: inherit;
+				font-size: 20px;
+				line-height: 30px;
+				height: 30px;
+				
+				i{
+					&:hover{
+						background-color: #eee;
+					}
+					margin-right: 10px;
+					border-top-right-radius: 4px;
+					border-top-left-radius: 4px;
+					padding: 6px 10px 8px 10px;
+					border-top: 1px #ccc solid;
+					border-left: 1px #ccc solid;
+					border-right: 1px #ccc solid;
+				}
+			}
 		}
 		.right{
+			position: absolute;
+			right: 0;
 			// min-width: 140px;
-			width: 15%;
+			// width: 15%;
 
 			float: right;
 			height: 100%;
 			img{
-				min-height: 140px;
-				min-width: 140px;
+				height: 200px;
+				width: 200px;
 				float: right;
 				height: inherit;
 			}
@@ -35,9 +107,11 @@
 }
 
 .loading-icon{
+	position: absolute;
+	top: 0;
 	text-align: center;
 	width: 100%;
-	height: 5vw;
-	line-height: 5vw;
+	height: 100vh;
+	line-height: 100vh;
 	font-size: 4vw;
 }
