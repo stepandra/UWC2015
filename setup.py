@@ -9,6 +9,7 @@ setup(
         "flask-login",
         "peewee",
         "Flask-WTF",
-        "WTForms"
+        "WTForms",
+        "marshmallow"
     ]
 )

@@ -1,1 +1,3 @@
-__author__ = 'stmytchyk'
+from peewee import *
+
+db = SqliteDatabase('database.db')
